@@ -20,8 +20,8 @@ const CustomNavbar = () => {
           </Nav>
 
           <div className="d-flex gap-2 column justify-content-center align-items-center">
-            <Button variant="primary" className="px-4 rounded-4">Log in</Button>
-            <Button variant="outline-dark" className="px-4 rounded-4">Sign Up</Button>
+            <Button variant="primary" className="px-4 rounded-4" href='login'>Log in</Button>
+            <Button variant="outline-dark" className="px-4 rounded-4" href='signup'>Sign Up</Button>
           </div>
         </Navbar.Collapse>
       </Container>
