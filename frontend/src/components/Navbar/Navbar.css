@@ -1,0 +1,30 @@
+.custom-glass-navbar {
+    border-bottom-left-radius: 20px !important; /* <-- Rounded bottom corners */
+    border-bottom-right-radius: 20px !important; /* <-- Rounded bottom corners */
+
+    background: rgba(255, 255, 255, 0.637) !important; /* Transparent white */
+    backdrop-filter: blur(12px) !important; /* Frosted blur */
+    -webkit-backdrop-filter: blur(12px) !important; /* Safari support */
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    transition: background 0.3s ease-in-out;
+
+}
+
+/* Slight hover effect */
+.custom-glass-navbar:hover {
+    background: rgba(255, 255, 255, 0.815) !important;
+}
+
+/* Keep your existing layout rules */
+.Navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Brand-name {
+    font-family: 'Lobster', cursive !important;
+}
