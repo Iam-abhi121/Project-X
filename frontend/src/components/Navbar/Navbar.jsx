@@ -8,7 +8,8 @@ const CustomNavbar = () => {
     <Navbar expand="lg" className="custom-glass-navbar shadow-sm py-3" fixed="top">
       <Container className='Navbar-container '>
         <Navbar.Brand href="#" className="Brand-name fw-bold fs-4 ">
-          Pro<span className="text-primary">ject</span> X
+          Pro<span className="text-primary">ject</span>
+          <img src="src\assets\fevicon.png" />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="main-navbar" />

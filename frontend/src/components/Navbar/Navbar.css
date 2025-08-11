@@ -1,8 +1,8 @@
 .custom-glass-navbar {
-    border-bottom-left-radius: 20px !important; /* <-- Rounded bottom corners */
-    border-bottom-right-radius: 20px !important; /* <-- Rounded bottom corners */
+    /* border-bottom-left-radius: 20px !important; */
+    /* border-bottom-right-radius: 20px !important; */
 
-    background: rgba(255, 255, 255, 0.637) !important; /* Transparent white */
+    background: rgba(255, 255, 255, 0.700) !important; /* Transparent white */
     backdrop-filter: blur(12px) !important; /* Frosted blur */
     -webkit-backdrop-filter: blur(12px) !important; /* Safari support */
 
@@ -15,7 +15,7 @@
 
 /* Slight hover effect */
 .custom-glass-navbar:hover {
-    background: rgba(255, 255, 255, 0.815) !important;
+    background: rgba(255, 255, 255, 0.900) !important;
 }
 
 /* Keep your existing layout rules */
@@ -27,4 +27,10 @@
 
 .Brand-name {
     font-family: 'Lobster', cursive !important;
+}
+
+.Brand-name img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-left: 2px; /* Space between text and image */
 }
