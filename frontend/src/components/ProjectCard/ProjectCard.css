@@ -1,4 +1,67 @@
-.Project-card:hover{
-    transform: scale(1.02);
-    transition: transform 0.4s;
+/* Light mode styles (Bootstrap default) */
+.Project-card {
+  background-color: #fff;
+  color: #222;
+  border-radius: 8px;
+  transition: background-color 0.5s, color 0.5s;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.Project-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.4s;
+}
+
+/* Dark mode overrides */
+.dark .Project-card {
+  background-color: #1e1e1e !important;
+  color: #eee !important;
+  box-shadow: 0 2px 8px rgb(255 255 255 / 0.1) !important;
+  border-color: #333 !important;
+}
+
+/* .dark .Project-card:hover {
+  background-color: #292929 !important;
+} */
+
+.Project-card .list-group-flush {
+  background-color: #f8f9fa;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.Project-card .list-group-flush .list-group-item {
+  background-color: #f8f9fa;
+  color: #212529;
+  border-color: #dee2e6;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Override ListGroup background and text */
+.dark .Project-card .list-group-flush {
+  background-color: #1e1e1e !important;
+  transition: background-color 0.5s, color 0.5s !important;
+}
+
+.dark .Project-card .list-group-flush .list-group-item {
+  background-color: #1e1e1e !important;
+  color: #ddd !important;
+  border-color: #333 !important;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Override Card Body text */
+.dark .Project-card .card-body {
+  color: #eee !important;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Override Card.Link colors */
+.dark .Project-card a.card-link {
+  color: #63b3ed !important; /* Tailwind blue-400 or similar */
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dark .Project-card a.card-link:hover {
+  color: #90cdf4 !important; /* lighter blue on hover */
+  transition: background-color 0.5s, color 0.5s;
 }
