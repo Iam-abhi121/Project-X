@@ -3,6 +3,8 @@ import { Navbar, Nav, Button, Container, Form } from 'react-bootstrap';
 import { ThemeContext } from '../../context/ThemeContext';
 import { BsSun, BsMoon } from 'react-icons/bs'; // Bootstrap icons
 import './Navbar.css';
+import { FaHome, FaSearch, FaPlusSquare, FaHeart, FaUser } from 'react-icons/fa';
+
 
 const CustomNavbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -21,8 +23,8 @@ const CustomNavbar = () => {
           <img src="src/assets/fevicon.png" alt="favicon" />
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="main-navbar" />
-        <Navbar.Collapse id="main-navbar" className="justify-content-end">
+        {/* <Navbar.Toggle aria-controls="main-navbar" /> */}
+        <Navbar id="main-navbar" className="justify-content-end">
           <Nav className="category-nav me-3 fw-medium gap-4">
             <Nav.Link className='category-Pro' href="#projects">Projects</Nav.Link>
             <Nav.Link className='category-cat' href="#categories">Categories</Nav.Link>
@@ -32,8 +34,12 @@ const CustomNavbar = () => {
           <div className="d-flex gap-3 align-items-center">
 
             {/* Login/Signup buttons */}
-            <Button variant="primary" className="px-4 rounded-4" href='login'>Log in</Button>
-            <Button variant="dark" className="px-4 rounded-4" href='signup'>Sign Up</Button>
+            <Button variant="primary" className="login px-4 rounded-4" href='login'>Log in</Button>
+            <Button variant="dark" className="signup px-4 rounded-4" href='signup'>Sign Up</Button>
+
+            {/* <div className='nav-icons d-flex gap-3 align-items-center'>
+              <FaUser size={22} className="nav-icon" />
+            </div> */}
 
 
              {/* Theme Toggle Switch */}
@@ -48,7 +54,7 @@ const CustomNavbar = () => {
               />
             </Form>
           </div>
-        </Navbar.Collapse>
+        </Navbar>
       </Container>
     </Navbar>
   );

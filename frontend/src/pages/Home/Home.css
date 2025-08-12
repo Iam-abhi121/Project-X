@@ -1,3 +1,14 @@
+@media (min-width: 992px) {
+    .mobile-navbar-container {
+        display: none !important;
+    }
+    
+    
+    
+}
+
+
+
 /* Light mode (default) */
 body, #root, .light-theme {
   background-color: #fff;

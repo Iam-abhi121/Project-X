@@ -2,6 +2,7 @@ import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
 import BannerSlider from '../../components/Banner/BannerSlider';
 import Projectcard from '../../components/ProjectCard/Projectcard';
+import MobileNavbar from '../../components/MobileNavbar/MobileNavbar';
 
 
 function Home() {
@@ -37,6 +38,12 @@ function Home() {
           <Projectcard />
           <Projectcard />
           <Projectcard />
+        </div>
+      </container>
+
+      <container className="mobile-navbar-container">
+        <div className="mobile-navbar">
+          <MobileNavbar />
         </div>
       </container>
 
