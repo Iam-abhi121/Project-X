@@ -24,13 +24,17 @@ function Home() {
         <div className="banner-overlay">
           <BannerSlider />
         </div>
+
       </container>
 
 
 
       <container className="projectcard-container">
+        <br />
         <h2 className="mt-5" >Featured Projects</h2>
         <p className="text-left ">Discover the latest and most exciting projects from our community.</p>
+                <hr />
+                <br />
         <div className="project-cards d-flex flex-wrap justify-content-center gap-4 mb-5 ">
           <Projectcard />
           <Projectcard />

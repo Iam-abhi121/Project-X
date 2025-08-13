@@ -28,18 +28,18 @@
 }
 
 .custom-glass-navbar:hover {
-    background: rgba(255, 255, 255, 0.900) !important;
+    background: rgba(255, 255, 255, 0.800) !important;
 }
 
 /* Dark Mode */
 .dark .custom-glass-navbar {
-    background: rgba(18, 18, 18, 0.8) !important; /* Dark translucent */
+    background: rgba(15, 19, 19, 0.8) !important; /* Dark translucent */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
 }
 
 .dark .custom-glass-navbar:hover {
-    background: rgba(18, 18, 18, 0.95) !important;
+    background: rgba(15, 19, 19, 0.9) !important;
 }
 
 /* Navbar container and brand styles remain same */

@@ -1,10 +1,11 @@
 /* Light mode styles (Bootstrap default) */
 .Project-card {
-  background-color: #fff;
+  background-color: #f1f1f1 !important; /* Light background */
   color: #222;
   border-radius: 8px;
   transition: background-color 0.5s, color 0.5s;
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  width: 23rem !important;
 }
 
 .Project-card:hover {
@@ -25,15 +26,23 @@
 } */
 
 .Project-card .list-group-flush {
-  background-color: #f8f9fa;
+  background-color: #f1f1f1;
   transition: background-color 0.5s, color 0.5s;
 }
 
 .Project-card .list-group-flush .list-group-item {
-  background-color: #f8f9fa;
+  background-color: #f1f1f1;
   color: #212529;
   border-color: #dee2e6;
   transition: background-color 0.5s, color 0.5s;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* show only 2 lines */
+  line-clamp: 2; /* standard property for compatibility */
+  max-height: 3.8em; /* Prevents third line from showing partially (assuming line-height: 1.5) */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Override ListGroup background and text */
@@ -46,22 +55,56 @@
   background-color: #1e1e1e !important;
   color: #ddd !important;
   border-color: #333 !important;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 0.5s, color 0.5s !important;
 }
 
 /* Override Card Body text */
 .dark .Project-card .card-body {
   color: #eee !important;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 0.5s, color 0.5s !important;
 }
 
 /* Override Card.Link colors */
 .dark .Project-card a.card-link {
   color: #63b3ed !important; /* Tailwind blue-400 or similar */
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 0.5s, color 0.5s !important;
 }
 
 .dark .Project-card a.card-link:hover {
   color: #90cdf4 !important; /* lighter blue on hover */
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 0.5s, color 0.5s !important;
+}
+
+/* Card Title and Text */
+.Project-card .card-title {
+  font-weight: bold;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  text-align: center;
+
+}
+
+.Project-card .card-text {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    text-align: center;
+    
+}
+
+.dark .Project-card .card-text {
+    color: #a7a7a7 !important; /* Light text for dark mode */
+    transition: background-color 0.5s, color 0.5s !important;
+
 }
