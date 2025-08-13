@@ -108,3 +108,59 @@
     transition: background-color 0.5s, color 0.5s !important;
 
 }
+
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 180px; /* adjust height to match your card image size */
+  overflow: hidden;
+}
+
+.fade-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+/* Optional: fade out effect by toggling opacity */
+.fade-image.fade-out {
+  opacity: 0;
+}
+
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 180px; /* adjust to your card image size */
+  overflow: hidden;
+}
+
+.fade-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.fade-image.fade-in {
+  opacity: 1;
+}
+
+.fade-image.fade-out {
+  opacity: 0;
+}
+/* Optional: Add a transition effect for the image */
+.fade-image {
+  transition: opacity 0.5s ease-in-out;
+}
+/* Optional: Add a hover effect for the card */
+.Project-card:hover .fade-image {
+  opacity: 0.8; /* Adjust the opacity on hover */
+}
