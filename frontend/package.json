@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:poll": "cross-env CHOKIDAR_USEPOLLING=1 VITE_FORCE_HMR=1 vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

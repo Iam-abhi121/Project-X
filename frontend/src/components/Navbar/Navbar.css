@@ -1,6 +1,6 @@
 
 @media (max-width: 992px) {
-    .category-nav {
+    .Nav {
     display: none   !important;
     
 }
@@ -90,4 +90,21 @@
   background-color: #343a40 !important; /* Bootstrap dark */
   border-color: #343a40 !important;
   color: #fff !important;
+}
+.category-nav .Nav :hover {
+    color: #0d6efd !important; /* Change color on hover */
+    transform: scale(1.05) !important; /* Scale up on hover */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+
+}
+
+.dark .category-nav .Nav :hover {
+    color: #ff0000 !important;
+    transform: scale(1.05) !important; /* Scale up on hover */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.dark .custom-glass-navbar .btn-primary .category-Pro :hover {
+  background-color: #0a58ca !important; /* Darker blue on hover */
+  border-color: #0a58ca !important;
 }

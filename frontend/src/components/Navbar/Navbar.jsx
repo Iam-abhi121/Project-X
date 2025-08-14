@@ -24,8 +24,8 @@ const CustomNavbar = () => {
         </Navbar.Brand>
 
         {/* <Navbar.Toggle aria-controls="main-navbar" /> */}
-        <Navbar id="main-navbar" className="justify-content-end">
-          <Nav className="category-nav me-3 fw-medium gap-4">
+        <Navbar id="main-navbar" className="category-nav justify-content-end">
+          <Nav className="Nav me-3 fw-medium gap-4">
             <Nav.Link className='category-Pro' href="#projects">Projects</Nav.Link>
             <Nav.Link className='category-cat' href="#categories">Categories</Nav.Link>
             <Nav.Link className="category-abo" href="#about">About</Nav.Link>
