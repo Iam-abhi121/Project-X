@@ -1,0 +1,93 @@
+
+@media (max-width: 992px) {
+    .category-nav {
+    display: none   !important;
+    
+}
+
+@media (max-width: 663px) {
+    .signup{
+        display: none !important;
+    }
+    .login{
+        display: none !important;
+    }
+    
+}
+}
+
+/* Light Mode (existing) */
+.custom-glass-navbar {
+    background: rgba(255, 255, 255, 0.700) !important; /* Transparent white */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.custom-glass-navbar:hover {
+    background: rgba(255, 255, 255, 0.800) !important;
+}
+
+/* Dark Mode */
+.dark .custom-glass-navbar {
+    background: rgba(15, 19, 19, 0.8) !important; /* Dark translucent */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+
+.dark .custom-glass-navbar:hover {
+    background: rgba(15, 19, 19, 0.9) !important;
+}
+
+/* Navbar container and brand styles remain same */
+.Navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Brand-name {
+    font-family: 'Lobster', cursive !important;
+    color: inherit; /* Make text color inherit from parent */
+}
+
+.dark .Brand-name {
+    color: #eee; /* Light text for dark mode */
+}
+
+.Brand-name img {
+    width: 30px;
+    height: 30px;
+    margin-left: 2px;
+}
+
+
+
+.dark .custom-glass-navbar,
+.dark .custom-glass-navbar a,
+.dark .custom-glass-navbar .Brand-name,
+.dark .custom-glass-navbar .nav-link,
+.dark .custom-glass-navbar .btn {
+  color: #eee !important; /* Light text color */
+}
+
+.dark .custom-glass-navbar a:hover,
+.dark .custom-glass-navbar .nav-link:hover {
+  color: #fff !important; /* Brighter on hover */
+}
+
+/* For buttons with dark background in navbar, adjust text color */
+.dark .custom-glass-navbar .btn-primary {
+  background-color: #0d6efd !important; /* Bootstrap primary blue */
+  border-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+.dark .custom-glass-navbar .btn-dark {
+  background-color: #343a40 !important; /* Bootstrap dark */
+  border-color: #343a40 !important;
+  color: #fff !important;
+}
