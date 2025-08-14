@@ -71,7 +71,7 @@ const Login = () => {
 
 const styles = {
 background: {
-  background: 'linear-gradient(120deg, #FFEAEA 10%, #FAD59A 100%)',
+  background: 'linear-gradient(120deg, #FFFFFF 10%,#FFFFFF 100%)',
   width: '100vw',
   height: '100vh',
   display: 'flex',
@@ -80,16 +80,20 @@ background: {
 }
 
 ,
-  overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-    backdropFilter: 'blur(10px)',
-    padding: '40px',
-    borderRadius: '16px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
-    width: '100%',
-    maxWidth: '400px',
-  },
+overlay: {
+  position: 'fixed',        // 🔹 keeps it in the same place
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)', // 🔹 perfect center
+  backgroundColor: 'rgba(255, 255, 255, 0.15)',
+  backdropFilter: 'blur(10px)',
+  padding: '40px',
+  borderRadius: '16px',
+  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  width: '100%',
+  maxWidth: '400px',
+},
   form: {
     display: 'flex',
     flexDirection: 'column',
