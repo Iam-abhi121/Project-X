@@ -4,7 +4,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import { BsSun, BsMoon } from 'react-icons/bs'; // Bootstrap icons
 import './Navbar.css';
 import { FaHome, FaSearch, FaPlusSquare, FaHeart, FaUser } from 'react-icons/fa';
-
+import { WiDayHaze, WiNightAltCloudyWindy } from "react-icons/wi";
 
 const CustomNavbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -43,11 +43,11 @@ const CustomNavbar = () => {
 
 
              {/* Theme Toggle Switch */}
-            <Form>
+            <Form className=''>
               <Form.Check 
                 type="switch"
                 id="dark-mode-switch"
-                label={theme === 'dark' ? <BsMoon size={20} /> : <BsSun size={20} />}
+                label={theme === 'dark' ? <WiNightAltCloudyWindy size={30} /> : <WiDayHaze  size={30} />}
                 checked={theme === 'dark'}
                 onChange={toggleTheme}
                 className="theme-switch"
