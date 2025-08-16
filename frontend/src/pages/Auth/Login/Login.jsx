@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaGoogle, FaFacebook, FaTwitter } from "react-icons/fa";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === 'test@example.com' && password === 'password') {
-      alert('Login successful!');
-      navigate('/');
+    if (email === "test@example.com" && password === "password") {
+      alert("Login successful!");
+      navigate("/");
     } else {
-      alert('Invalid credentials');
+      alert("Invalid credentials");
     }
   };
 
@@ -22,118 +23,116 @@ const Login = () => {
   }, []);
 
   return (
-    <div style={styles.background}>
-      <div style={styles.overlay}>
-        <form onSubmit={handleLogin} style={styles.form} className="fade-in">
-          <h2 style={styles.heading}>Welcome Back</h2>
-          <div style={styles.inputGroup}>
-            <label htmlFor="email" style={styles.label}>Email</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              style={styles.input}
-            />
-          </div>
-          <div style={styles.inputGroup}>
-            <label htmlFor="password" style={styles.label}>Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              style={styles.input}
-            />
-          </div>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <h2 style={styles.heading}>
+          Welcome Back <span role="img" aria-label="wave">👋</span>
+        </h2>
+        <p style={styles.subtitle}>Log in to your social world</p>
+
+        <form onSubmit={handleLogin} style={styles.form}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={styles.input}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={styles.input}
+          />
           <button type="submit" style={styles.button}>Login</button>
         </form>
+
+        <p style={styles.orText}>Or login with</p>
+        <div style={styles.socialIcons}>
+          <FaGoogle style={{ ...styles.icon, color: "#DB4437" }} />
+          <FaFacebook style={{ ...styles.icon, color: "#3b5998" }} />
+          <FaTwitter style={{ ...styles.icon, color: "#1da1f2" }} />
+        </div>
+
+        <p style={styles.signupText}>
+          Don't have an account?{" "}
+          <a href="/signup" style={styles.link}>Sign up</a>
+        </p>
       </div>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400;600&display=swap');
-        .fade-in {
-          animation: fadeIn 1s ease-in-out forwards;
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        @keyframes fadeIn {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 };
 
 const styles = {
-background: {
-  background: 'linear-gradient(120deg, #FFFFFF 10%,#FFFFFF 100%)',
-  width: '100vw',
-  height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-}
-
-,
-overlay: {
-  position: 'fixed',        // 🔹 keeps it in the same place
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)', // 🔹 perfect center
-  backgroundColor: 'rgba(255, 255, 255, 0.15)',
-  backdropFilter: 'blur(10px)',
-  padding: '40px',
-  borderRadius: '16px',
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-  border: '1px solid rgba(255, 255, 255, 0.2)',
-  width: '100%',
-  maxWidth: '400px',
-},
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '20px',
-    color: 'black',
+  wrapper: {
+    minHeight: "100vh", // ensure covers all viewport height
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  card: {
+    background: "#fff",
+    padding: "2rem",
+    borderRadius: "12px",
+    textAlign: "center",
+    width: "320px",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
   },
   heading: {
-    fontFamily: "'Playfair Display', serif",
-    fontSize: '2rem',
-    textAlign: 'center',
-    color: 'black',
-    marginBottom: '10px',
+    fontSize: "1.5rem",
+    marginBottom: "0.3rem",
   },
-  inputGroup: {
-    display: 'flex',
-    flexDirection: 'column',
+  subtitle: {
+    color: "#777",
+    marginBottom: "1.5rem",
+    fontSize: "0.9rem",
   },
-  label: {
-    fontSize: '0.9rem',
-    marginBottom: '6px',
-    fontWeight: '600',
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "1rem",
   },
   input: {
-    padding: '10px 14px',
-    borderRadius: '8px',
-    border: '1px solid rgba(255, 255, 255, 0.3)',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    color: 'black',
-    outline: 'none',
-    fontSize: '1rem',
+    width: "100%",
+    padding: "0.8rem",
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    fontSize: "1rem",
   },
   button: {
-    padding: '12px',
-    backgroundColor: '#2563eb',
-    color: 'white',
-    border: 'none',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    fontWeight: '600',
-    transition: 'background-color 0.3s ease',
+    width: "100%",
+    padding: "0.8rem",
+    backgroundColor: "#f76c6c",
+    border: "none",
+    color: "white",
+    borderRadius: "8px",
+    fontSize: "1rem",
+    cursor: "pointer",
+  },
+  orText: {
+    margin: "1rem 0 0.5rem",
+    color: "#555",
+  },
+  socialIcons: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "1rem",
+    marginBottom: "1rem",
+  },
+  icon: {
+    fontSize: "1.5rem",
+    cursor: "pointer",
+  },
+  signupText: {
+    fontSize: "0.9rem",
+    color: "#555",
+  },
+  link: {
+    color: "#f76c6c",
+    textDecoration: "none",
   },
 };
 
