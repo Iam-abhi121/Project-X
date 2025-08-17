@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaTwitter } from "react-icons/fa";
+import Navbar from "../../../components/Navbar/Navbar";
+import "./Login.css";
+import MobileNavbar from "../../../components/MobileNavbar/MobileNavbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,64 +26,54 @@ const Login = () => {
   }, []);
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.heading}>
-          Welcome Back <span role="img" aria-label="wave">👋</span>
-        </h2>
-        <p style={styles.subtitle}>Log in to your social world</p>
+    <>
+      
+        <Navbar />
+      <div className="login-container">
+          <form onSubmit={handleLogin} style={styles.form}>
+          <h2 style={styles.heading}>
+            Welcome Back <span role="img" aria-label="wave">👋</span>
+          </h2>
+          <p style={styles.subtitle}>Log in to your social world</p>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              style={styles.input}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              style={styles.input}
+            />
+            <button type="submit" style={styles.button}>Login</button>
+          
 
-        <form onSubmit={handleLogin} style={styles.form}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={styles.input}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            style={styles.input}
-          />
-          <button type="submit" style={styles.button}>Login</button>
-        </form>
+          <p style={styles.orText}>Or login with</p>
+          <div style={styles.socialIcons}>
+            <FaGoogle style={{ ...styles.icon, color: "#DB4437" }} />
+            <FaFacebook style={{ ...styles.icon, color: "#3b5998" }} />
+            <FaTwitter style={{ ...styles.icon, color: "#1da1f2" }} />
+          </div>
 
-        <p style={styles.orText}>Or login with</p>
-        <div style={styles.socialIcons}>
-          <FaGoogle style={{ ...styles.icon, color: "#DB4437" }} />
-          <FaFacebook style={{ ...styles.icon, color: "#3b5998" }} />
-          <FaTwitter style={{ ...styles.icon, color: "#1da1f2" }} />
-        </div>
-
-        <p style={styles.signupText}>
-          Don't have an account?{" "}
-          <a href="/signup" style={styles.link}>Sign up</a>
-        </p>
+          <p style={styles.signupText}>
+            Don't have an account?{" "}
+            <a href="/signup" style={styles.link}>Sign up</a>
+          </p> 
+        </form> 
       </div>
-    </div>
+      <MobileNavbar />
+    </>
   );
 };
 
 const styles = {
-  wrapper: {
-    minHeight: "100vh", // ensure covers all viewport height
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  card: {
-    background: "#fff",
-    padding: "2rem",
-    borderRadius: "12px",
-    textAlign: "center",
-    width: "320px",
-    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-  },
+
   heading: {
     fontSize: "1.5rem",
     marginBottom: "0.3rem",
@@ -94,6 +87,13 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+    borderRadius: "12px",
+    padding: "2rem",
+    // border: "1px solid #00bbffff",
+    alignItems: "center",
+    marginTop: "5rem",
+
   },
   input: {
     width: "100%",
@@ -101,11 +101,12 @@ const styles = {
     border: "1px solid #ccc",
     borderRadius: "8px",
     fontSize: "1rem",
+    backgroundColor: "#f9f9f9",
   },
   button: {
     width: "100%",
     padding: "0.8rem",
-    backgroundColor: "#f76c6c",
+    backgroundColor: "#009dffff",
     border: "none",
     color: "white",
     borderRadius: "8px",

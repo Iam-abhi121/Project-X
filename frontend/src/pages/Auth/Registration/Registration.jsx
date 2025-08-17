@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaGoogle, FaFacebook, FaTwitter } from "react-icons/fa";
+import Navbar from "../../../components/Navbar/Navbar";
+import MobileNavbar from "../../../components/MobileNavbar/MobileNavbar";
+import "./Registration.css";
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -39,22 +43,13 @@ const Registration = () => {
     }
   };
 
-  useEffect(() => {
-    // Full-page pink gradient background
-    document.body.style.margin = "0";
-    document.body.style.height = "100vh";
-    document.body.style.overflow = "hidden";
-    document.body.style.background =
-      "linear-gradient(to right, #faebf8ff, #faebf8ff)";
-    document.body.style.fontFamily = "'Inter', sans-serif";
-  }, []);
-
   return (
-    <div style={styles.wrapper}>
-      <div style={styles.card}>
-        <h2 style={styles.heading}>Create Account</h2>
+    <>
+      <Navbar />
 
+      <div className="registration-container">
         <form onSubmit={handleRegister} style={styles.form}>
+          <h2 style={styles.heading}>Create Account</h2>
           <input
             type="text"
             name="firstName"
@@ -102,7 +97,7 @@ const Registration = () => {
           />
 
           {/* Account Type Dropdown with "Select Account Type" option */}
-          <select
+          {/* <select
             name="accountType"
             value={formData.accountType}
             onChange={handleChange}
@@ -115,11 +110,19 @@ const Registration = () => {
             <option value="buyer">Buyer</option>
             <option value="seller">Seller</option>
             <option value="both">Both</option>
-          </select>
+          </select> */}
 
           <button type="submit" style={styles.button}>
             Register
           </button>
+
+          <p style={styles.orText}>Or Signup with</p>
+          <div style={styles.socialIcons}>
+            <FaGoogle style={{ ...styles.icon, color: "#DB4437" }} />
+            <FaFacebook style={{ ...styles.icon, color: "#3b5998" }} />
+            <FaTwitter style={{ ...styles.icon, color: "#1da1f2" }} />
+          </div>
+
 
           <p style={styles.text}>
             Already have an account?{" "}
@@ -129,28 +132,14 @@ const Registration = () => {
           </p>
         </form>
       </div>
-    </div>
+
+      <MobileNavbar />
+    </>
   );
 };
 
 const styles = {
-  wrapper: {
-    height: "80vh", // still keeps fixed height center
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  card: {
-    background: "#fcfbfbff",
-    padding: "1rem",
-    borderRadius: "12px",
-    textAlign: "center",
-    width: "300px",
-    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-    display: "flex",
-    flexDirection: "column",
-    gap: "0.8rem",
-  },
+
   heading: {
     fontSize: "1.5rem",
     marginBottom: "1rem",
@@ -159,18 +148,24 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
+    borderRadius: "12px",
+    padding: "2rem",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+
   },
+
   input: {
-    width: "100%",
+    width: "auto",
     padding: "0.5rem",
     border: "1px solid #ccc",
     borderRadius: "8px",
     fontSize: "0.9rem",
+    backgroundColor: "#f9f9f9",
   },
   button: {
     width: "100%",
-    padding: "0.5rem",
-    backgroundColor: "#f76c6c",
+    // padding: "0.5rem",
+    backgroundColor: "#009dffff",
     border: "none",
     color: "white",
     borderRadius: "8px",
@@ -184,6 +179,23 @@ const styles = {
   },
   link: {
     color: "#f76c6c",
+    cursor: "pointer",
+
+  },
+  orText: {
+    // margin: "1rem 0 0.5rem",
+    color: "#555",
+    textAlign: "center",
+  },
+
+  socialIcons: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "1rem",
+    margin: "-1rem 0",
+  },
+  icon: {
+    fontSize: "1.5rem",
     cursor: "pointer",
   },
 };

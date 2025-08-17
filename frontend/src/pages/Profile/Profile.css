@@ -1,0 +1,79 @@
+.cover-photo-container {
+  width: 100%;
+  height: 250px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 0.2px solid white;
+}
+
+.cover-photo-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.profile-photo-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 20%;
+  overflow: hidden;
+  position: absolute;
+  top: 220px;   /* distance from top */
+  left: 80px;   /* distance from left */
+  border: 5px solid rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  display: flex;
+
+}
+
+
+
+.profile-photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info-container {
+  position: absolute;
+  align-items: start;
+  top: 320px;   /* distance from top */
+  left: 300px;  /* distance from left */
+  color: rgb(0, 0, 0);
+  text-align: start;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+
+  p{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  }
+
+
+}
+
+
+
+.profile-section{
+  box-sizing: border-box;
+}
+
+
+.project-grid {
+  /* display: grid; */
+  gap: 16px;
+  margin-top: 500px; /* Adjusted to account for profile photo and info */
+  display: flex;
+  flex-direction: row !important;
+  align-items: start !important;
+  width: 100%;
+}

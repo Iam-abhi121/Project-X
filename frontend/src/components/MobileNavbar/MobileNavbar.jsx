@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaHome, FaSearch, FaPlusSquare, FaHeart, FaUser } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { GrProjects } from "react-icons/gr";
 import './MobileNavbar.css';
 
@@ -19,11 +20,12 @@ const MobileNavbar = () => {
         zIndex: 1000,
       }}
     >
-      <FaHome size={22} />
-      <FaSearch size={22} />
-      <GrProjects size={22}/>
-      <FaHeart size={22} />
-      <FaUser size={22} />
+      <Link to="/"><FaHome size={22} /></Link>
+      <Link to="#"><FaSearch size={22} /></Link>
+      <Link to="#"><GrProjects size={22} /></Link>
+      <Link to="#"><FaHeart size={22} /></Link>
+      <Link to="/login"><FaUser size={22} /></Link>
+
     </div>
   );
 };

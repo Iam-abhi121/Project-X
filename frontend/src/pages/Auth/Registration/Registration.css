@@ -1,0 +1,51 @@
+body, #root, .light-theme {
+    background-color: white !important;
+    transition: background-color 0.5s, color 0.5s !important;
+}
+
+.dark-theme, .dark body, .dark #root {
+  background-color: #000000 !important;
+  color: #eee !important;
+  transition: background-color 0.5s, color 0.5s !important;
+}
+
+.registration-container {
+  background-color: #f9f9f9 !important;
+  border-radius: 12px !important;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important; */
+  margin-top: 5rem !important;
+  width: 400px !important;
+  transition: background-color 0.5s, color 0.5s !important;
+
+
+}
+
+.dark .registration-container {
+  background-color: #1a1a1a !important;
+  color: #eee !important;
+  transition: background-color 0.5s, color 0.5s !important;
+/* box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1) !important; */
+}
+
+@media screen and (max-width: 768px) {
+  .registration-container {
+    width: 360px !important;
+    margin: 2rem auto !important;
+    align-items: center !important;
+    
+
+  }
+    
+}
+
+.dark input {
+    background-color: #000000 !important;
+    color: #eee !important;
+    transition: background-color 0.5s, color 0.5s !important;
+}
+
+.dark button {
+    background-color: #ff0000 !important;
+    color: #fff !important;
+    transition: background-color 0.5s, color 0.5s !important;
+}

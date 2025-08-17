@@ -23,8 +23,10 @@
     -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease-in-out;
+    transition: background 0.5s ease-in-out;
     transition: background-color 0.5s, color 0.5s;
+    /* margin: 10px 0px 0px 0px !important; */
+    
 }
 
 .custom-glass-navbar:hover {
@@ -52,10 +54,12 @@
 .Brand-name {
     font-family: 'Lobster', cursive !important;
     color: inherit; /* Make text color inherit from parent */
+    transition: background-color 0.5s, color 0.5s !important;
 }
 
 .dark .Brand-name {
     color: #eee; /* Light text for dark mode */
+    transition: background-color 0.5s, color 0.5s !important;
 }
 
 .Brand-name img {
@@ -94,14 +98,14 @@
 .category-nav .Nav :hover {
     color: #0066ff !important; /* Change color on hover */
     transform: scale(1.05) !important; /* Scale up on hover */
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
 
 }
 
 .dark .category-nav .Nav :hover {
     color: #ff0000 !important;
     transform: scale(1.05) !important; /* Scale up on hover */
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out; /* Smooth transition */
 }
 
 .dark .custom-glass-navbar .btn-primary .category-Pro :hover {
