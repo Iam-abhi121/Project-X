@@ -47,6 +47,8 @@ const Registration = () => {
     <>
       <Navbar />
 
+      <div className="registration-background">
+
       <div className="registration-container">
         <form onSubmit={handleRegister} style={styles.form}>
           <h2 style={styles.heading}>Create Account</h2>
@@ -132,6 +134,7 @@ const Registration = () => {
           </p>
         </form>
       </div>
+    </div>
 
       <MobileNavbar />
     </>

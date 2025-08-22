@@ -23,27 +23,20 @@
     
 }
 
-
-
-
 @media (max-width: 768px) {
   .banner-title {
     text-align: center !important;
     color: white;
     font-size: 1rem !important;
     text-align: left !important;
-    text-align: justify !important;
     margin-top: 350px !important;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
     font-weight: bold !important;
-    margin-left: -10% !important;
   }
   .banner-description {
     font-size: 0.7rem !important;
     text-align: left !important;
-    text-align: justify !important;
     text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
-    margin-left: -10% !important;
   }
 }
 

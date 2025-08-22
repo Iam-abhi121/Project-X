@@ -1,8 +1,11 @@
+
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  background-color: #ffffff;
+}
+
+.dark #root {
+  background-color: #121212 !important;
 }
 
 .logo {
@@ -29,7 +32,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear; 
   }
 }
 

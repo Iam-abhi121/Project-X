@@ -27,8 +27,8 @@ const Login = () => {
 
   return (
     <>
-      
-        <Navbar />
+      <Navbar />
+      <div className="login-background">
       <div className="login-container">
           <form onSubmit={handleLogin} style={styles.form}>
           <h2 style={styles.heading}>
@@ -67,6 +67,7 @@ const Login = () => {
           </p> 
         </form> 
       </div>
+    </div>
       <MobileNavbar />
     </>
   );
@@ -92,7 +93,6 @@ const styles = {
     padding: "2rem",
     // border: "1px solid #00bbffff",
     alignItems: "center",
-    marginTop: "5rem",
 
   },
   input: {

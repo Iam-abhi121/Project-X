@@ -25,6 +25,7 @@
 .Project-card .list-group-flush {
   background-color: #f1f1f1;
   transition: background-color 0.5s, color 0.5s;
+  text-align: left;
 }
 
 .Project-card .list-group-flush .list-group-item {
@@ -86,11 +87,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: center;
+  text-align: justify;
 }
 
 .dark .Project-card .card-text {
   color: #a7a7a7 !important;
+
 }
 
 /* Image container */

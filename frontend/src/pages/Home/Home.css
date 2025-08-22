@@ -38,3 +38,6 @@ body, #root, .light-theme {
   transition: background-color 0.5s, color 0.5s;
 }
 
+.home-container {
+  display: none;
+}

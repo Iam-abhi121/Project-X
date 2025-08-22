@@ -133,23 +133,34 @@ function Projectcard() {
         </div>
 
         <Card.Body>
-          <Card.Title>AI-Powered Study Assistant</Card.Title>
+          <Card.Title>Light – A Modern Social Media Platform</Card.Title>
           <Card.Text>
-            A smart, adaptive learning tool designed to help students prepare
-            for exams by generating personalized quizzes, summarizing notes, and
-            tracking progress.
+
+            Light is a next-generation social media web application designed to connect people, 
+            share moments, and build communities. Inspired by leading platforms like Instagram, 
+            Facebook, and LinkedIn, Light provides users with a seamless experience for creating posts, 
+            sharing images, engaging with content, and connecting with friends.
+
+            Built with React.js for the frontend and Express.js + MongoDB for the backend, 
+            the platform integrates JWT authentication for secure user access and Cloudinary 
+            for efficient image storage. The clean UI and smooth interactions make Light an engaging 
+            and user-friendly platform for personal expression and social networking.
+
           </Card.Text>
         </Card.Body>
 
         <ListGroup className="list-group-flush">
           <ListGroup.Item>
-            Real-time feedback on quiz performance
+            ✅ User Authentication & Security – Secure login/signup using JWT authentication.
+            ✅ Post Creation – Upload images, add captions, and share with friends using Cloudinary
           </ListGroup.Item>
           <ListGroup.Item>
-            AI-generated summaries of study material
+            ✅ Feed System – Interactive feed displaying posts from users in real time.
+            ✅ Likes & Comments – Engage with posts through likes and comments.
           </ListGroup.Item>
           <ListGroup.Item>
-            Progress tracking with visual analytics
+            ✅ Chat & Messaging – Real-time messaging system with clean UI.
+            ✅ Responsive Design – Optimized for mobile, tablet, and desktop.
           </ListGroup.Item>
         </ListGroup>
       </Card>

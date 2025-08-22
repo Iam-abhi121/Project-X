@@ -1,33 +1,22 @@
-import { createContext, useEffect, useState, useContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("system");
+  // Get theme from localStorage or default to light
+  const getInitialTheme = () => {
+    const saved = localStorage.getItem("theme");
+    return saved || "light";
+  };
 
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  // Apply theme to <html> root and save to localStorage
   useEffect(() => {
-    if (theme === "system") {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      setTheme(mediaQuery.matches ? "dark" : "light");
-
-      const handleChange = (e) => {
-        setTheme(e.matches ? "dark" : "light");
-      };
-      mediaQuery.addEventListener("change", handleChange);
-      return () => mediaQuery.removeEventListener("change", handleChange);
-    }
-  }, [theme]);
-
-  useEffect(() => {
+    localStorage.setItem("theme", theme);
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
-    localStorage.setItem("theme", theme);
   }, [theme]);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "system";
-    setTheme(savedTheme);
-  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

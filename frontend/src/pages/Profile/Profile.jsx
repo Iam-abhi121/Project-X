@@ -1,45 +1,40 @@
 import './Profile.css';
 import Navbar from '../../components/Navbar/Navbar';
 import ProjectCard from '../../components/ProjectCard/ProjectCard.jsx';
+import CoverPhoto from '../../components/CoverPhoto/CoverPhoto.jsx';
+import Profileinfo from '../../components/Profileinfo/Profileinfo.jsx';
+import MobileNavbar from '../../components/MobileNavbar/MobileNavbar.jsx';
 
 function Profile() {
   return (
     <>
+    <div className='profile-background'>
+    
+    <div className="navbar-container ">
       <Navbar />
-      <div className="profile-page">
-        {/* Cover Photo */}
-        <div className="cover-photo-container">
-          <img 
-            src="https://w.wallhaven.cc/full/3q/wallhaven-3q9vmd.jpg" 
-            alt="cover" 
-          />
-        </div>
+    </div>
 
-        {/* Profile Section */}
-        <div className="profile-section">
-          <div className="profile-photo-container">
-            <img 
-              src="https://w.wallhaven.cc/full/d8/wallhaven-d8gj3g.png" 
-              alt="profile" 
-            />
-          </div>
-        </div>
-      </div>
+    <div className="cover-photo-container">
+      <CoverPhoto />
+    </div>
 
+    <div className="profile-content">
+      <Profileinfo />
+    </div>
 
-      <div className="profile-info-container">
-        <h2>Karina</h2>
-        <button>Edit Profile</button>
-      </div>
+    {/* <div className="projects-container">
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+    </div> */}
 
-      <div className="project-container">
-        <hr />
-          <div className="project-grid d-flex flex-wrap justify-content-center gap-4 mb-5">
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-          </div>
-      </div>
+  
+
+    <div>
+      <MobileNavbar />
+    </div>
+  </div>
+
     </>
   );
 }
