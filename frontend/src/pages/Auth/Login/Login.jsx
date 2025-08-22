@@ -4,6 +4,7 @@ import { FaGoogle, FaFacebook, FaTwitter } from "react-icons/fa";
 import Navbar from "../../../components/Navbar/Navbar";
 import "./Login.css";
 import MobileNavbar from "../../../components/MobileNavbar/MobileNavbar";
+import {Link} from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -63,7 +64,7 @@ const Login = () => {
 
           <p style={styles.signupText}>
             Don't have an account?{" "}
-            <a href="/signup" style={styles.link}>Sign up</a>
+            <Link to="/signup" style={styles.link}>Sign up</Link>
           </p> 
         </form> 
       </div>

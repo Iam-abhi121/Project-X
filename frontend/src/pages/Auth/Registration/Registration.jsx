@@ -4,6 +4,7 @@ import { FaGoogle, FaFacebook, FaTwitter } from "react-icons/fa";
 import Navbar from "../../../components/Navbar/Navbar";
 import MobileNavbar from "../../../components/MobileNavbar/MobileNavbar";
 import "./Registration.css";
+import {Link} from "react-router-dom";
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -126,18 +127,16 @@ const Registration = () => {
           </div>
 
 
-          <p style={styles.text}>
+          <p style={styles.text} className="text-center">
             Already have an account?{" "}
-            <span style={styles.link} onClick={() => navigate("/login")}>
-              Login
-            </span>
+            <Link to="/login" style={styles.link}>Login</Link>
           </p>
         </form>
       </div>
+    <MobileNavbar />
     </div>
 
-      <MobileNavbar />
-    </>
+  </>
   );
 };
 

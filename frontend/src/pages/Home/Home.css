@@ -41,3 +41,9 @@ body, #root, .light-theme {
 .home-container {
   display: none;
 }
+
+/* body::-webkit-scrollbar { 
+  display: none; 
+} */
+
+
