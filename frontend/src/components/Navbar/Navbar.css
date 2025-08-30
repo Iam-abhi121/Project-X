@@ -3,6 +3,10 @@
   .Nav {
     display: none !important;
   }
+
+    .profile {
+    display: none !important;
+  }
 }
 
 @media (max-width: 663px) {

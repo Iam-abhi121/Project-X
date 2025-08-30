@@ -40,3 +40,14 @@
   }
 }
 
+.banner-overlay{
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dark .banner-overlay {
+  background-color: #000000;
+  border-radius: 20px;
+  transition: background-color 0.5s, color 0.5s;
+}

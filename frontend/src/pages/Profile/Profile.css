@@ -1,38 +1,161 @@
-/* Light mode (default) */
+/* Custom properties (CSS variables) for theme colors */
+:root {
+  --bg-color-light: #fff;
+  --text-color-light: #222;
+  --bg-glass-light: rgba(246, 246, 246, 0.7);
+  --border-glass-light: rgba(0, 0, 0, 0.2);
+  --dropdown-bg-light: #fff;
+  --dropdown-hover-light: #f1f1f1;
+}
+
+.dark {
+  --bg-color-light: #000;
+  --text-color-light: #eee;
+  --bg-glass-light: rgba(32, 32, 32, 0.642);
+  --border-glass-light: rgba(255, 255, 255, 0.1);
+  --dropdown-bg-light: #222;
+  --dropdown-hover-light: #333;
+}
+
+/* Base Styles */
 body, #root, .light-theme {
-  background-color: #fff;
-  color: #222;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
   transition: background-color 0.5s, color 0.5s;
 }
 
-/* Dark mode */
-.dark-theme, .dark body, .dark #root {
-  background-color: #000000 !important;
-  color: #eee;
-  transition: background-color 0.5s, color 0.5s;
-}
+/* Component Styles */
 .profile-content {
-
   display: flex;
   flex-direction: column;
-  align-items: start;
-  /* background-color: transparent; */
-  top: 220px;   /* distance from top */
-  left: 0px;   /* distance from left */
-  overflow: hidden;
+  align-items: flex-start;
   position: absolute;
-  padding-left: 100px;
-  padding-right: 100px;
-  /* background-color: white; */
+  top: 220px;
+  left: 0;
+  padding: 0 100px;
 }
 
 .cover-photo {
-  width: 100%;
+  width: auto;
   height: 300px;
-  border-radius: 20%;
+  border: 8px solid rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: background-color 0.5s, border-color 0.5s;
+  border-radius: 20px;
   overflow: hidden;
-  border: 8px solid rgba(255, 255, 255, 0.170) !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
-  transition: background-color 0.5s, border-color 0.5s !important;
+}
+
+.profile-background {
+  position: relative;
+}
+
+/* .indicator {
+  height: 4px;
+  background: black;
+  width: 400px;
+  border-radius: 16px 16px 16px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.dark .indicator {
+  background: white;
+} */
+
+.profile-nav {
+  background: var(--bg-glass-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass-light);
+  border-radius: 16px;
+  margin-top: 10rem;
+  padding: 0.8rem 2rem;
+  transition: background-color 0.5s, border-color 0.5s;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+.dark .profile-nav {
+  background: var(--bg-glass-light);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; */
+  border-radius: 16px;
+  margin-top: 10rem;
+  padding: 0.8rem 2rem;
+  transition: background-color 0.5s, border-color 0.5s;
+
+
+}
+
+/* Nav Link and Dropdown Styles */
+.profile-nav nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 400px;
+  flex-wrap: wrap;
+}
+
+.profile-nav nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-color-light);
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.dark .profile-nav nav a {
+  color: var(--text-color-light);
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #007bff;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--dropdown-bg-light);
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: var(--text-color-light);
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--dropdown-hover-light);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { ThemeContext } from '../../context/ThemeContext';
 import './Navbar.css';
-import { PiSunHorizonFill,PiMoonFill } from "react-icons/pi";
+import { PiSunHorizonFill} from "react-icons/pi";
 import { FaMoon } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import {Link} from "react-router-dom";
 
 
@@ -34,6 +35,7 @@ const CustomNavbar = () => {
             {/* Login/Signup buttons */}
             <Button variant="primary" className="login px-4 rounded-4" as={Link} to="/login">Log in</Button>
             <Button variant="dark" className="signup px-4 rounded-4" as={Link} to="/signup">Sign Up</Button>
+            <Button variant="dark" className="profile px-3 rounded-4" as={Link} to="/profile"><FaUser /></Button>
 
             {/* Theme Switch */}
             <label className="theme-switch">

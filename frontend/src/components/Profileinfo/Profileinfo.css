@@ -1,29 +1,43 @@
-.profile{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    
-    
+/* Custom properties for a more maintainable theme */
+:root {
+  --profile-photo-border-color: rgba(255, 255, 255, 0.17);
+  --edit-cover-bg: rgba(255, 255, 255, 0.644);
+  --edit-cover-text: black;
+  --edit-cover-border: 1px solid black;
+  --edit-profile-text: black;
+  --edit-profile-border: 1px solid black;
 }
 
+.dark {
+  --profile-photo-border-color: rgba(0, 0, 0, 0.17);
+  --edit-cover-bg: rgba(0, 0, 0, 0.463);
+  --edit-cover-text: white;
+  --edit-cover-border: 1px solid white;
+  --edit-profile-text: white;
+  --edit-profile-border: 1px solid white;
+}
+
+/* --- Profile Container --- */
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* --- Profile Photo Container --- */
 .profile-photo-container {
   width: 200px;
   height: 200px;
   border-radius: 20%;
   overflow: hidden;
-  border: 8px solid rgba(255, 255, 255, 0.170) !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
-  transition: background-color 0.5s, border-color 0.5s !important;
+  border: 8px solid var(--profile-photo-border-color);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: background-color 0.5s, border-color 0.5s;
 }
+
 .dark .profile-photo-container {
-  border: 8px solid rgba(0, 0, 0, 0.170) !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
-  background-color: rgba(18, 18, 18, 0.8) !important;
-  transition: background-color 0.5s, border-color 0.5s !important;
-
-
+  background-color: rgba(18, 18, 18, 0.8);
 }
 
 .profile-photo-container img {
@@ -32,23 +46,49 @@
   object-fit: cover;
 }
 
-.profile-info-container{
-    text-align: left;
-    margin-top: 70px;
+/* --- Profile Information --- */
+.profile-info-container {
+  text-align: left;
+  margin-top: 70px;
+}
 
-    button {
-        background-color: rgb(0, 200, 255);
-        border: 1px solid white;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        padding: 5px 10px;
-        transition: background-color 0.3s;
-        width: 100px;
+/* --- Profile Buttons --- */
+.profile-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: relative;
+  left: 660px;
 
-        &:hover {
-            background-color: rgba(0, 200, 255, 0.5);
-            color: black;
-        }
-    }
+}
+
+.edit-cover-button {
+  background-color: var(--edit-cover-bg);
+  color: var(--edit-cover-text);
+  border: var(--edit-cover-border);
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+
+}
+
+.dark .edit-cover-button {
+  background-color: var(--edit-cover-bg) !important;
+  color: var(--edit-cover-text);
+  border: var(--edit-cover-border);
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+
+}
+
+.edit-profile-button {
+  background-color: transparent;
+  color: var(--edit-profile-text);
+  border: var(--edit-profile-border);
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+
+.dark .edit-profile-button {
+  background-color: rgba(32, 32, 32, 0.642) !important;
+  color: var(--edit-profile-text);
+  border: var(--edit-profile-border);
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+
 }

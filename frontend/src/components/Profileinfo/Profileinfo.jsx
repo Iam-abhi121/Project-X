@@ -14,7 +14,11 @@ const Profileinfo = () => {
             <div className='profile-info-container'>
                 <h2>Unknown</h2>
                 <p>unknown@gmail.com</p>
-                <button>Edit</button>
+            </div>
+
+            <div className='profile-button-container'>
+              <button className='edit-cover-button'>Edit Cover Photo</button>
+              <button className='edit-profile-button'>Edit Profile</button>
             </div>
         </div>
     </>

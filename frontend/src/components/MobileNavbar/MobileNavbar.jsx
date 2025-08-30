@@ -5,6 +5,7 @@ import { GrProjects } from "react-icons/gr";
 import './MobileNavbar.css';
 
 
+
 const MobileNavbar = () => {
   return (
     <div
@@ -24,7 +25,7 @@ const MobileNavbar = () => {
       <Link to="#"><FaSearch size={22} /></Link>
       <Link to="#"><GrProjects size={22} /></Link>
       <Link to="#"><FaHeart size={22} /></Link>
-      <Link to="/login"><FaUser size={22} /></Link>
+      <Link to="/profile"><FaUser size={22} /></Link>
 
     </div>
   );
