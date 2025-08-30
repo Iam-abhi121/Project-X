@@ -50,7 +50,7 @@ function Home() {
       </div>
 
       <footer className="footer text-center py-4 bg-light ">
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
+        <p>&copy; 2025 Project X. All rights reserved.</p>
       </footer>
       
 

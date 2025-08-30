@@ -4,58 +4,98 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard.jsx';
 import CoverPhoto from '../../components/CoverPhoto/CoverPhoto.jsx';
 import Profileinfo from '../../components/Profileinfo/Profileinfo.jsx';
 import MobileNavbar from '../../components/MobileNavbar/MobileNavbar.jsx';
-import { BsFillGrid1X2Fill } from "react-icons/bs";
-import { FaArrowAltCircleDown } from "react-icons/fa";
 import { MdContactSupport } from "react-icons/md";
-import { IoMdDownload } from "react-icons/io";
+import { BiSolidGridAlt } from "react-icons/bi";
+import { PiDownloadSimpleBold } from "react-icons/pi";
+import { useState } from 'react';
 
 function Profile() {
+  // track which tab is selected
+  const [activeTab, setActiveTab] = useState("projects");
+
   return (
     <>
       <div className='profile-background mx-5'>
-
         {/* Navbar */}
         <div className="navbar-container">
           <Navbar />
         </div>
 
         {/* Cover Photo */}
-        <div className="cover-photo-container">
-          <CoverPhoto />
-        </div>
+        <div className="profile-container">
+          <div className="cover-photo-container">
+            <CoverPhoto />
+          </div>
 
-        {/* Profile Info */}
-        <div className="profile-content">
-          <Profileinfo />
+          {/* Profile Info */}
+          <div className="profile-content">
+            <Profileinfo />
+          </div>
         </div>
 
         {/* Profile Navigation */}
-
         <div className='profile-nav'>
-          
           <nav>
-            <a href="#posts"><BsFillGrid1X2Fill size={22}/></a>
-            <a href="#about"><FaArrowAltCircleDown  size={25}/></a>
-            <a href="#friends"><MdContactSupport  size={30}/></a>
+            <button 
+              className={activeTab === "projects" ? "active" : ""} 
+              onClick={() => setActiveTab("projects")}
+            >
+              <BiSolidGridAlt size={30}/> 
+            </button>
+
+
+            <button 
+              className={activeTab === "downloads" ? "active" : ""} 
+              onClick={() => setActiveTab("downloads")}
+            >
+              <PiDownloadSimpleBold size={30}/> 
+            </button>
+
+
+            <button 
+              className={activeTab === "support" ? "active" : ""} 
+              onClick={() => setActiveTab("support")}
+            >
+              <MdContactSupport size={30}/> 
+            </button>
           </nav>
         </div>
 
+        {/* Content Section - Render based on active tab */}
+        <div className="tab-content mt-4">
+          {activeTab === "projects" && (
+            <div className="projects-container d-flex flex-wrap justify-content-center gap-4 mb-4">
+              <ProjectCard />
+              <ProjectCard />
+              <ProjectCard />
+            </div>
+          )}
 
-        {/* Projects Section */}
-        <div id="posts" className="projects-container d-flex flex-wrap justify-content-center gap-5 mb-5 mt-4">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {activeTab === "downloads" && (
+            <div className="downloads-container text-center">
+              <h3>Downloads</h3>
+              <img src="src/assets/img/coming_soon_download_section.png" alt="" />
+              <p>Here you can see your downloaded files</p>
+            </div>
+          )}
+
+          {activeTab === "support" && (
+            <div className="support-container text-center">
+              <h3>Support tickets</h3>
+              <img src="src/assets/img/coming_soon_support_section.png" alt="" />
+              <p>Here you can see your support tickets.</p>
+            </div>
+          )}
         </div>
 
         {/* Mobile Navbar */}
         <div>
           <MobileNavbar />
         </div>
-
       </div>
+
       <footer className="footer text-center py-4 bg-light ">
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
+        <p>&copy; 2025 Project X. All rights reserved.</p>
       </footer>
     </>
   );

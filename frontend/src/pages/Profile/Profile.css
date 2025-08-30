@@ -42,7 +42,7 @@ body, #root, .light-theme {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   transition: background-color 0.5s, border-color 0.5s;
-  border-radius: 20px;
+  border-radius: 20px !important;
   overflow: hidden;
 }
 
@@ -50,19 +50,22 @@ body, #root, .light-theme {
   position: relative;
 }
 
-/* .indicator {
-  height: 4px;
-  background: black;
-  width: 400px;
-  border-radius: 16px 16px 16px 16px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-glass-light);
+  padding-bottom: 11%;
+  border-radius: 20px;
+  border: 1px solid var(--border-glass-light);
+  transition: background-color 0.5s, border-color 0.5s;
 }
 
-.dark .indicator {
-  background: white;
-} */
+.dark .profile-container {
+  background-color: var(--bg-glass-light);
+  border: 1px solid var(--border-glass-light);
+  transition: background-color 0.5s, border-color 0.5s;
+}
 
 .profile-nav {
   background: var(--bg-glass-light);
@@ -70,11 +73,11 @@ body, #root, .light-theme {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-glass-light);
   border-radius: 16px;
-  margin-top: 10rem;
+  margin-top: 2%;
   padding: 0.8rem 2rem;
   transition: background-color 0.5s, border-color 0.5s;
-  margin-left: 100px;
-  margin-right: 100px;
+  /* margin-left: 100px;
+  margin-right: 100px; */
 
 }
 
@@ -82,33 +85,35 @@ body, #root, .light-theme {
   background: var(--bg-glass-light);
   /* border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; */
   border-radius: 16px;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   padding: 0.8rem 2rem;
   transition: background-color 0.5s, border-color 0.5s;
 
 
 }
 
-/* Nav Link and Dropdown Styles */
+/* Nav Link */
 .profile-nav nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 400px;
+  gap: 30%;
   flex-wrap: wrap;
 }
 
-.profile-nav nav a {
+.profile-nav nav button {
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  color: var(--text-color-light);
+  color: var(--text-color-light) !important;
   padding: 6px 10px;
   border-radius: 20px;
   transition: all 0.3s ease;
+  background: transparent !important;
+  border: none !important;
 }
 
-.dark .profile-nav nav a {
+.dark .profile-nav nav button {
   color: var(--text-color-light);
 }
 
@@ -158,4 +163,17 @@ body, #root, .light-theme {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+.support-container img {
+  max-width: 30%;
+  height: 30%;
+  filter: contrast(1);
+}
+
+.downloads-container img {
+  max-width: 30%;
+  height: 30%;
+  filter: contrast(1);
 }

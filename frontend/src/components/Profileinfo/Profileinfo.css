@@ -9,7 +9,7 @@
 }
 
 .dark {
-  --profile-photo-border-color: rgba(0, 0, 0, 0.17);
+  --profile-photo-border-color: rgba(61, 61, 61, 0.17);
   --edit-cover-bg: rgba(0, 0, 0, 0.463);
   --edit-cover-text: white;
   --edit-cover-border: 1px solid white;
@@ -38,6 +38,10 @@
 
 .dark .profile-photo-container {
   background-color: rgba(18, 18, 18, 0.8);
+  border: 8px solid var(--profile-photo-border-color);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: background-color 0.5s, border-color 0.5s;
 }
 
 .profile-photo-container img {
@@ -58,7 +62,7 @@
   flex-direction: column;
   gap: 80px;
   position: relative;
-  left: 660px;
+  left: 120%;
 
 }
 
@@ -67,6 +71,7 @@
   color: var(--edit-cover-text);
   border: var(--edit-cover-border);
   transition: background-color 0.5s, color 0.5s, border 0.5s;
+
 
 }
 
